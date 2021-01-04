@@ -5,6 +5,17 @@ function SignUp(){
     const [step, setStep] = React.useState(0)
     const [value, onChangeText] = React.useState('')
 
+    let currentProgressBarMargin = (7-Number(step))/7*51
+
+    const progressBarStyles = StyleSheet.create({
+        progressBar: {
+            borderBottomColor: 'black',
+            borderBottomWidth: 1,
+            marginRight: `${currentProgressBarMargin}%`
+        }
+    })
+    
+
     function Next() {
         setStep(step + 1)
         onChangeText('')
@@ -36,7 +47,10 @@ function SignUp(){
                 </>
             : (step === 1) ?
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Name</Text>
                         <TextInput style={styles.inputBox} onChangeText={text => onChangeText(text)} value={value} placeholder="Please Fill Here"/>
@@ -45,7 +59,10 @@ function SignUp(){
                 </>
             : (step === 2) ? 
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Date of Birth</Text>
                         <TextInput style={styles.inputBox} onChangeText={text => onChangeText(text)} value={value} placeholder="Please Fill Here"/>
@@ -54,7 +71,10 @@ function SignUp(){
                 </>
             : (step === 3) ? 
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Address</Text>
                         <TextInput style={styles.inputBox} onChangeText={text => onChangeText(text)} value={value} placeholder="Please Fill Here"/>
@@ -63,7 +83,10 @@ function SignUp(){
                 </>
             : (step === 4) ?  
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Email</Text>
                         <TextInput style={styles.inputBox} onChangeText={text => onChangeText(text)} value={value} placeholder="Please Fill Here"/>
@@ -72,7 +95,10 @@ function SignUp(){
                 </>
             : (step === 5) ?
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Email Verification!</Text>
                         <Text style={styles.inputLabel}>Check Your Email!</Text>
@@ -82,7 +108,10 @@ function SignUp(){
                 </>
             : (step === 6) ?
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>ID Picture!</Text>
                         <Text style={styles.inputLabel}>Upload Your ID Card!</Text>
@@ -92,7 +121,10 @@ function SignUp(){
                 </>    
             : (step === 7) ?
                 <>
-                    <Text style={styles.headingText}>Verification</Text>
+                    <View>
+                        <Text style={styles.headingText}>Verification</Text>
+                        <View style={progressBarStyles.progressBar}/>
+                    </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Kitchen!</Text>
                         <Text style={styles.inputLabel}>Upload Your Best Kitchen Pic!</Text>
@@ -169,7 +201,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: '3%',
         textAlign: 'center',
         minWidth: '30%'
-    }
+    },
 })
 
 export default SignUp;
