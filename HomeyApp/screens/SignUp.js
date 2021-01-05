@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { Divider } from 'react-native-elements';
 
 function SignUp(){
     const [step, setStep] = React.useState(0)
     const [value, onChangeText] = React.useState('')
 
-    let currentProgressBarMargin = (7-Number(step))/7*51
+    let currentProgressBarMargin = (8-Number(step))/7*75
 
     const progressBarStyles = StyleSheet.create({
         progressBar: {
-            borderBottomColor: 'black',
-            borderBottomWidth: 1,
-            marginRight: `${currentProgressBarMargin}%`
+            height: 3,
+            marginLeft: '10.75%',
+            marginRight: `${currentProgressBarMargin}%`,
+            marginTop: '5%'
         }
     })
     
-
     function Next() {
         setStep(step + 1)
         onChangeText('')
@@ -49,7 +50,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Name</Text>
@@ -61,7 +62,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Date of Birth</Text>
@@ -73,7 +74,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Address</Text>
@@ -85,7 +86,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Email</Text>
@@ -97,7 +98,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Email Verification!</Text>
@@ -110,7 +111,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>ID Picture!</Text>
@@ -123,7 +124,7 @@ function SignUp(){
                 <>
                     <View>
                         <Text style={styles.headingText}>Verification</Text>
-                        <View style={progressBarStyles.progressBar}/>
+                        <Divider style={progressBarStyles.progressBar}/>
                     </View>
                     <View style={styles.inputView}>
                         <Text style={styles.inputLabel}>Kitchen!</Text>
@@ -153,16 +154,18 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'center'
     },
     headingText: {
-        fontSize: 34
+        fontSize: 34,
+        textAlign: 'center'
     },
     verifyText: {
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'center'
     },
     goText: {
-        fontSize: 22
+        fontSize: 22,
+        textAlign: 'center'
     },
     bottomNavigationSignUp: {
         display: 'flex',
@@ -170,14 +173,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     backText: {
-        marginRight: '10%'
+        
     },
     nextText: {
-        marginLeft: '10%'
+        
     },
     inputView: {
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '5%'
     },
     inputLabel: {
         fontSize: 20,
